@@ -26,6 +26,11 @@ $ cat xinput
     ↳ Razer Razer Orbweaver                     id=13   [slave  keyboard (3)]
 ```
 
+Make sure to change the keyboard mapping of the orbweaver to us
+```
+$ setxkbmap -device 13 -layout us
+```
+
 The use xkbcomb to load it on the dedicated device
 ```
 $  xkbcomp -i 13 -w0 orbweaver.xkb $DISPLAY
