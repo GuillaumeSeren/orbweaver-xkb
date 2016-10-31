@@ -11,9 +11,9 @@
 
 xkb_keymap        {
 
-	xkb_keycodes  { include "evdev+aliases(qwerty)"	};
-	xkb_types     { include "complete"	};
-	xkb_compat    { include "complete"	};
+  xkb_keycodes         { include "evdev+aliases(qwerty)"};
+  xkb_types            { include "complete"};
+  xkb_compatibility    { include "complete"};
 
   // ┌─────┬─────┬─────┬─────┬─────┐
   // │     │     │     │     │     │
@@ -50,8 +50,35 @@ xkb_keymap        {
   //                                               └──────────┘
   //
 
+  xkb_symbols "orbweaver" {
     name[Group1]= "OrbWeaver";
     include "pc+us+inet(evdev)"
+    // First row : F1 F2 F3 F4 F5
+    key <TLDE>  {[ F1,        asciitilde  ]};
+    key <AE01>  {[ F2,        exclam      ]};
+    key <AE02>  {[ F3,        at          ]};
+    key <AE03>  {[ F4,        numbersign  ]};
+    key <AE04>  {[ F5,        dollar      ]};
+    // Second row : 1 2 3 4 5
+    key <TAB>   {[ 1,         exclam      ]};
+    key <AD01>  {[ 2,         P           ]};
+    key <AD02>  {[ 3,         W           ]};
+    key <AD03>  {[ 4,         E           ]};
+    key <AD04>  {[ 5,         R           ]};
+    // Third row : 6 7 8 9 0
+    key <CAPS>  {[ 6,         braceright  ]};
+    key <AC01>  {[ 7,         A           ]};
+    key <AC02>  {[ 8,         S           ]};
+    key <AC03>  {[ 9,         D           ]};
+    key <AC04>  {[ 0,         F           ]};
+    // Fourth row : F6 F7 F8 F9 F10
+    key <LFSH>  {[ F6,        quotedbl    ]};
+    key <AB01>  {[ F7,        Z           ]};
+    key <AB02>  {[ F8,        X           ]};
+    key <AB03>  {[ F9,        C           ]};
+    key <AB04>  {[ F10,       V           ]};
+    // Main mod key
+    key <LALT>  {[ Control_L, question    ]};
     // Arrow keys
     key <UP>    {[ Up                     ]};
     key <RGHT>  {[ Right                  ]};
@@ -61,29 +88,6 @@ xkb_keymap        {
     key <SPCE>  {[ space                  ]};
   };
 
-    key <TLDE> {	[   F1,	asciitilde	]	};
-    key <AE01> {	[	  F2,	exclam 		]	};
-    key <AE02> {	[	  F3,	at		]	};
-    key <AE03> {	[	  F4,	numbersign	]	};
-    key <AE04> {	[	  F5,	dollar		]	};
-    key <TAB>  {	[   1,    exclam		]	};
-    key <AD01> {	[	  2,	P 		]	};
-    key <AD02> {	[	  3,	W		]	};
-    key <AD03> {	[	  4,	E		]	};
-    key <AD04> {	[	  5,	R		]	};
-    key <CAPS> {	[ 	6,	braceright	]	};
-    key <AC01> {	[	  7,	A 		]	};
-    key <AC02> {	[	  8,	S		]	};
-    key <AC03> {	[	  9,	D		]	};
-    key <AC04> {	[	  0,	F		]	};
-    key <LFSH> {	[   F6,	quotedbl	]	};
-    key <AB01> {	[	  F7,	Z 		]	};
-    key <AB02> {	[	  F8,	X		]	};
-    key <AB03> {	[	  F9,	C		]	};
-    key <AB04> {	[	  F10,	V		]	};
-    key <LALT> {	[   Control_L,	question	]	};
+  xkb_geometry  { include "pc(pc104)"};
 };
-
-xkb_geometry  { include "pc(pc104)"	};
-
-};
+// vim: ft=xkb:fdm=indent:ts=2
