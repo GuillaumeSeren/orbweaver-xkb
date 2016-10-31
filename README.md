@@ -36,5 +36,8 @@ The use xkbcomb to load it on the dedicated device
 $  xkbcomp -i 13 -w0 orbweaver.xkb $DISPLAY
 ```
 
+## Customisation
+If you want to use different mapping just edit the keycode in the XKB file.
+
 ## Licence
 The project is GPLv3.
